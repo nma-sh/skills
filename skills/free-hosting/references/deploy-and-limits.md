@@ -1,6 +1,6 @@
-# nma.sh Commands, Recipes, Frameworks & Error Codes
+# nma.sh Commands, Recipes & Error Codes
 
-Local reference bundled with the `nma-sh` skill. All commands support `--json` anywhere in the arguments (or `-- --json ...` if placed first).
+Local reference bundled with the `free-hosting` skill. All commands support `--json` anywhere in the arguments (or `-- --json ...` if placed first).
 
 ## SSH Commands Reference
 
@@ -88,16 +88,6 @@ function hit(ip, limitPerMin) {
 ### Scheduled Work (No Built-In Cron)
 
 Apps run only on HTTP requests (2 s CPU max). Either trigger a secret-guarded `POST /cron` from GitHub Actions `schedule:`, or run lazily on incoming requests using a timestamp in `kv`.
-
-## Prebuilt SSR Frameworks (via `nanovm pack . | ssh nma.sh deploy APP --json`)
-
-Requires Node >= 22.12 locally when packing framework builds:
-- **Hono (Workers):** `npx wrangler deploy --dry-run --outdir dist`
-- **Astro (`@astrojs/cloudflare`, `output: 'server'`):** `npm run build`
-- **SvelteKit (`@sveltejs/adapter-cloudflare`):** `npm run build`
-- **React Router (Web server):** `npm remove @react-router/node @react-router/serve && npm run build`
-- **Nuxt / SolidStart / TanStack Start (Nitro):** `NITRO_PRESET=cloudflare-module npm run build`
-- **Next.js (App Router via `@opennextjs/cloudflare`):** set `cacheComponents: false` and `images: { unoptimized: true }`, then `npx opennextjs-cloudflare build`
 
 ## Key Exit Codes & Error Fixes
 

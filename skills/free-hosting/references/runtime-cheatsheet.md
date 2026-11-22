@@ -1,6 +1,6 @@
 # nma.sh Runtime & Limits Cheat Sheet
 
-Local reference bundled with the `nma-sh` skill. See `deploy-and-limits.md` for SSH commands, recipes, SSR framework build commands, and error codes.
+Local reference bundled with the `free-hosting` skill. See `deploy-and-limits.md` for SSH commands, recipes, and error codes.
 
 ## Request & Response
 
