@@ -54,14 +54,13 @@ Run `ssh nma.sh signup --json` once before connecting over MCP.
 
 | Path | Purpose |
 |---|---|
-| `plugin.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin manifest (`nma.free-hosting`) |
+| `plugin.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin manifest (`nma-sh`) |
 | `mcp.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable stdio MCP server config (`ssh nma.sh mcp`) |
-| `skills/free-hosting/SKILL.md` | Core Free Hosting skill: when to use, SSH auth, single-file & static deploys, built-ins, privacy/trust, and human handoff |
-| `skills/free-hosting/references/runtime-cheatsheet.md` | Copy-paste patterns for `serve()`, `db`, `kv`, `auth`, `secrets`, `_redirects`, `_headers`, and platform limits |
-| `skills/free-hosting/references/deploy-and-limits.md` | Full SSH command reference, contact-form + rate-limit recipes, and error codes |
+| `skills/nma-sh/SKILL.md` | Full `nma.sh` deployment & hosting skill (static sites, JS apps, DB/KV/auth/secrets, logs, rollback, domains) |
+| `skills/free-hosting/SKILL.md` | Free Hosting skill targeting instant free static & JS app hosting over SSH |
+| `skills/*/references/` | Local bundled cheat sheets (`runtime-cheatsheet.md`, `deploy-and-limits.md`) |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
-| `.claude-plugin/marketplace.json` | Claude Code plugin marketplace manifest |
-| `.claude-plugin/plugin.json` | Claude Code plugin manifest |
+| `.claude-plugin/` | Claude Code plugin + marketplace manifests and `1024x1024` `icon.png` |
 | `.mcp.json` | Claude Code / Cursor MCP server configuration (`ssh nma.sh mcp`) |
 
 ## Good Fit vs. Not a Fit

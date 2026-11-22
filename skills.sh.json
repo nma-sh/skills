@@ -3,9 +3,10 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Free Hosting",
+      "title": "Free Hosting & Deployment",
       "description": "Free website and JavaScript app hosting over SSH with instant HTTPS, built-in DB, KV, auth, and Firecracker microVMs.",
       "skills": [
+        "nma-sh",
         "free-hosting"
       ]
     }
