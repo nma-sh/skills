@@ -1,10 +1,10 @@
-# nma-sh/skills
+# nma-sh/skills — Free Hosting over SSH
 
 [![skills.sh](https://skills.sh/b/nma-sh/skills)](https://skills.sh/nma-sh/skills)
 
-Official Agent Skill, Claude Code plugin, and MCP configuration for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
+Official **Free Hosting** Agent Skill, Claude Code plugin, and MCP configuration for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
 
-Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — with no browser signup, OAuth tokens, or cloud dashboard setup required. Your SSH key is the account.
+Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — **free to start** (2 apps with no email/card, 5 apps kept permanently with a free verified email; flat $8/month Pro for 10 apps, custom domains, and daily backups). Your SSH key is the account.
 
 ## Install
 
@@ -54,9 +54,9 @@ Run `ssh nma.sh signup --json` once before connecting over MCP.
 
 | Path | Purpose |
 |---|---|
-| `skills/nma-sh/SKILL.md` | Core skill: when to use, SSH auth, single-file & static/framework deploys, built-ins, safety guardrails, and human handoff |
-| `skills/nma-sh/references/runtime-cheatsheet.md` | Copy-paste patterns for `serve()`, `db`, `kv`, `auth`, `secrets`, `_redirects`, `_headers`, and platform limits |
-| `skills/nma-sh/references/deploy-and-limits.md` | Full SSH command reference, contact-form + rate-limit recipes, framework build targets, and error codes |
+| `skills/free-hosting/SKILL.md` | Core Free Hosting skill: when to use, SSH auth, single-file & static/framework deploys, built-ins, safety guardrails, and human handoff |
+| `skills/free-hosting/references/runtime-cheatsheet.md` | Copy-paste patterns for `serve()`, `db`, `kv`, `auth`, `secrets`, `_redirects`, `_headers`, and platform limits |
+| `skills/free-hosting/references/deploy-and-limits.md` | Full SSH command reference, contact-form + rate-limit recipes, framework build targets, and error codes |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
 | `.claude-plugin/marketplace.json` | Claude Code plugin marketplace manifest |
 | `.claude-plugin/plugin.json` | Claude Code plugin manifest |
@@ -65,7 +65,7 @@ Run `ssh nma.sh signup --json` once before connecting over MCP.
 ## Good Fit vs. Not a Fit
 
 **Great fit:**
-- Static sites and SPAs (`index.html`, Vite, Astro, React, SvelteKit builds)
+- Free hosting for static sites and SPAs (`index.html`, Vite, Astro, React, SvelteKit builds)
 - Full-stack small/medium JavaScript apps (contact forms, admin panels, APIs, webhooks, link-in-bio, micro-tools, prototypes)
 - Apps that benefit from built-in strong `db`, edge `kv`, `auth`, and write-only `secrets` without wiring external services
 

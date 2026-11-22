@@ -3,10 +3,10 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Deployment & Hosting",
-      "description": "Deploy static sites, SPAs, and full-stack JavaScript apps to Firecracker microVMs over SSH.",
+      "title": "Free Hosting",
+      "description": "Free website and JavaScript app hosting over SSH with instant HTTPS, built-in DB, KV, auth, and Firecracker microVMs.",
       "skills": [
-        "nma-sh"
+        "free-hosting"
       ]
     }
   ]

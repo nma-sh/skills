@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "nma-sh",
-  "version": "1.0.0",
-  "description": "Deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets over SSH via nma.sh.",
+  "version": "1.2.0",
+  "description": "Free hosting over SSH via nma.sh — deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets.",
   "author": {
     "name": "nma.sh",
     "url": "https://nma.sh"
@@ -11,10 +11,11 @@
   "repository": "https://github.com/nma-sh/skills",
   "license": "MIT",
   "keywords": [
+    "free-hosting",
+    "web-hosting",
+    "static-hosting",
     "deploy",
-    "hosting",
     "ssh",
-    "static-site",
     "javascript",
     "microvm",
     "nma-sh"

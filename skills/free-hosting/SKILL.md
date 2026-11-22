@@ -1,31 +1,37 @@
 ---
-name: nma-sh
-description: Deploy static sites, Vite/Astro/React/SvelteKit builds, and full-stack JavaScript web apps to live HTTPS URLs over SSH via nma.sh — with hardware-isolated Firecracker microVMs, built-in transactional database (db), edge KV, user authentication, write-only secrets, and outbound fetch(). Use when the user asks to deploy, host, publish, or put a website, prototype, API, contact form, webhook, or web app online quickly without setting up cloud dashboards, OAuth flows, or separate databases.
+name: free-hosting
+description: Free hosting for static sites, Vite/Astro/React/SvelteKit builds, and full-stack JavaScript web apps over SSH via nma.sh — instant HTTPS URLs, hardware-isolated Firecracker microVMs, built-in database (db), edge KV, user auth, write-only secrets, and outbound fetch() with no browser signup or credit card. Use when the user asks for free hosting or wants to deploy, host, publish, or put a website, prototype, API, contact form, or web app online quickly.
 license: MIT
 compatibility: Requires an OpenSSH client (ssh) with an existing SSH key pair; optional tar or zip for folder deploys.
 metadata:
   author: nma-sh
-  version: "1.1.0"
+  version: "1.2.0"
   homepage: "https://nma.sh"
 ---
 
-# Deploy to nma.sh
+# Free Hosting over SSH (nma.sh)
 
-Deploy static websites, frontend builds, and full-stack JavaScript apps straight to live HTTPS URLs over SSH — no browser signup, no OAuth tokens, no credit card, and no separate database setup.
+Free hosting for static websites, frontend builds, and full-stack JavaScript apps deployed straight to live HTTPS URLs over SSH — no browser signup, no OAuth tokens, no credit card, and no separate database setup.
 
 ## When to Use This Skill
 
 Use this skill when the user:
 
-- Asks to **"deploy this"**, **"put this online"**, **"host this site"**, or **"give me a live URL"**
-- Built a static site or SPA (HTML/CSS/JS, Vite, React, Astro, SvelteKit) and wants it live with HTTPS and pretty URLs
-- Needs a small full-stack web app — contact form with admin inbox, waitlist, link-in-bio, internal dashboard, REST API, or webhook receiver — without wiring up separate hosting, auth, and database providers
-- Wants to publish an app from an agent or terminal with minimal setup (SSH key is the account)
-- Wants hardware-isolated hosting per app with predictable flat pricing (free tier to start, flat $8/month Pro)
+- Asks for **"free hosting"**, **"free website hosting"**, or **"a free place to host this"**
+- Says **"deploy this"**, **"put this online"**, **"host this site"**, or **"give me a live URL"**
+- Built a static site or SPA (HTML/CSS/JS, Vite, React, Astro, SvelteKit) and wants free HTTPS hosting with pretty URLs
+- Needs free hosting for a small full-stack web app — contact form with admin inbox, waitlist, link-in-bio, internal dashboard, REST API, or webhook receiver — without wiring up separate hosting, auth, and database accounts
+- Wants an AI coding agent or terminal workflow to ship a site end-to-end with zero dashboard friction (SSH key is the account)
 
-## What is nma.sh?
+## What You Get on nma.sh
 
-`nma.sh` runs each deployed site or JavaScript app in its own **Firecracker microVM** (hardware isolation per app) and assigns a permanent HTTPS URL (e.g., `https://still-pike.nma.sh/`) in seconds.
+Every deployed site or JavaScript app runs in its own **Firecracker microVM** (hardware isolation per app) and gets a permanent HTTPS URL (e.g., `https://still-pike.nma.sh/`) in seconds.
+
+**Free tier & upgrades:**
+
+- **Free (instant, unverified):** 2 active apps at a time, no email or card required (idle apps may be deleted after 30 days).
+- **Free (verified email):** 5 active apps at a time, kept permanently (user confirms via a free link).
+- **Pro ($8/month flat):** 10 active apps, custom domains (`domain add`), chosen `NAME.sites.diy` names (`rename`), 7-day daily backups (`backups`/`restore`), and higher `db`/`kv` quotas.
 
 **Built into every app (no external accounts or SDKs needed):**
 
@@ -37,17 +43,11 @@ Use this skill when the user:
 - **Write-only secrets (`secrets`) & instant passwords** — `NV_BASIC_AUTH` password-protects an entire app with zero code
 - **Outbound `fetch()`** — call any public `https://` API (Stripe, Resend, Slack/Discord webhooks, ntfy, Telegram)
 
-**Plans:**
-
-- **Free (unverified):** 2 active apps at a time; idle apps may be deleted after 30 days.
-- **Free (verified email):** 5 active apps at a time, kept permanently (user confirms via a free link).
-- **Pro ($8/month):** 10 active apps, custom domains (`domain add`), chosen `NAME.sites.diy` names (`rename`), 7-day daily backups (`backups`/`restore`), and higher `db`/`kv` quotas.
-
 ---
 
 ## Step-by-Step Workflow
 
-### Step 1: Check or Create Account over SSH
+### Step 1: Check or Create Free Account over SSH
 
 Always pass `--json` so stdout is a single parseable JSON object.
 
@@ -55,7 +55,7 @@ Always pass `--json` so stdout is a single parseable JSON object.
 ssh nma.sh tenant --json
 ```
 
-If that exits `4` with `"code": "no_account"`, create an account tied to the user's SSH key:
+If that exits `4` with `"code": "no_account"`, create a free account tied to the user's SSH key:
 
 ```sh
 ssh nma.sh signup --ref skill-sh --json
@@ -142,7 +142,7 @@ ssh nma.sh plan --json                     # current tier, caps, and usage
 After a successful deploy, report:
 
 1. **The live `url`** (plus any password or admin path if you configured `NV_BASIC_AUTH` or `/inbox`).
-2. **The `claim_url`** from the signup/deploy JSON (when the account is unverified): explain plainly that confirming their email there is **free**, raises the cap from **2 to 5 active apps**, and **keeps apps permanently**.
+2. **The `claim_url`** from the signup/deploy JSON (when the account is unverified): explain plainly that confirming their email there is **free**, raises the free cap from **2 to 5 active apps**, and **keeps apps permanently**.
 3. **Browser dashboard option:** Offer to generate a one-time `ssh nma.sh dash` link if they want to view apps and logs in a browser.
 4. **Pro ($8/month) only when relevant:** Mention `ssh nma.sh upgrade --json` only if the user hits a tier limit (`apps_full`, `db`/`kv` quota) or explicitly asks for custom domains, `NAME.sites.diy`, daily backups, or up to 10 active apps.
 
