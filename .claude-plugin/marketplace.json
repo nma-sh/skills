@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "nma-sh",
+  "version": "1.0.0",
+  "description": "Deploy static sites and JavaScript web apps to live HTTPS URLs over SSH with nma.sh.",
+  "owner": {
+    "name": "nma.sh",
+    "url": "https://nma.sh"
+  },
+  "plugins": [
+    {
+      "name": "nma-sh",
+      "description": "Deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets over SSH via nma.sh.",
+      "author": {
+        "name": "nma.sh",
+        "url": "https://nma.sh"
+      },
+      "category": "deployment",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/nma-sh"
+      ],
+      "homepage": "https://nma.sh"
+    }
+  ]
+}
