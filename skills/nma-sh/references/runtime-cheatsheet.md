@@ -1,11 +1,6 @@
 # nma.sh Runtime & Limits Cheat Sheet
 
-Authoritative live slices (fetch these if you need full detail):
-- https://nma.sh/deploy.txt
-- https://nma.sh/runtime.txt
-- https://nma.sh/recipes.txt
-- https://nma.sh/limits.txt
-- https://nma.sh/errors.txt
+Local reference bundled with the `nma-sh` skill. See `deploy-and-limits.md` for SSH commands, recipes, SSR framework build commands, and error codes.
 
 ## Request & Response
 

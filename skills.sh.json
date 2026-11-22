@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Deployment & Hosting",
+      "description": "Deploy static sites, SPAs, and full-stack JavaScript apps to Firecracker microVMs over SSH.",
+      "skills": [
+        "nma-sh"
+      ]
+    }
+  ]
+}
