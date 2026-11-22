@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nma.free-hosting",
+  "version": "1.3.0",
+  "description": "Free hosting for static sites and full-stack JavaScript web apps over SSH via nma.sh — instant HTTPS URLs, Firecracker microVMs, built-in db, kv, auth, and secrets.",
+  "author": {
+    "name": "nma.sh",
+    "url": "https://nma.sh"
+  },
+  "homepage": "https://nma.sh",
+  "repository": "https://github.com/nma-sh/skills",
+  "license": "MIT",
+  "keywords": [
+    "free-hosting",
+    "web-hosting",
+    "static-hosting",
+    "deploy",
+    "ssh",
+    "javascript",
+    "microvm",
+    "mcp",
+    "nma-sh"
+  ]
+}

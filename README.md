@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/nma-sh/skills)](https://skills.sh/nma-sh/skills)
 
-Official **Free Hosting** Agent Skill, Claude Code plugin, and MCP configuration for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
+Official **Free Hosting** Agent Skill, [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin pack, Claude Code plugin, and MCP configuration for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
 
 Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — **free to start** (2 apps with no email/card, 5 apps kept permanently with a free verified email; flat $8/month Pro for 10 apps, custom domains, and daily backups). Your SSH key is the account.
 
@@ -54,13 +54,15 @@ Run `ssh nma.sh signup --json` once before connecting over MCP.
 
 | Path | Purpose |
 |---|---|
-| `skills/free-hosting/SKILL.md` | Core Free Hosting skill: when to use, SSH auth, single-file & static/framework deploys, built-ins, safety guardrails, and human handoff |
+| `plugin.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin manifest (`nma.free-hosting`) |
+| `mcp.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable stdio MCP server config (`ssh nma.sh mcp`) |
+| `skills/free-hosting/SKILL.md` | Core Free Hosting skill: when to use, SSH auth, single-file & static deploys, built-ins, privacy/trust, and human handoff |
 | `skills/free-hosting/references/runtime-cheatsheet.md` | Copy-paste patterns for `serve()`, `db`, `kv`, `auth`, `secrets`, `_redirects`, `_headers`, and platform limits |
-| `skills/free-hosting/references/deploy-and-limits.md` | Full SSH command reference, contact-form + rate-limit recipes, framework build targets, and error codes |
+| `skills/free-hosting/references/deploy-and-limits.md` | Full SSH command reference, contact-form + rate-limit recipes, and error codes |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
 | `.claude-plugin/marketplace.json` | Claude Code plugin marketplace manifest |
 | `.claude-plugin/plugin.json` | Claude Code plugin manifest |
-| `.mcp.json` | Zero-install MCP server configuration (`ssh nma.sh mcp`) |
+| `.mcp.json` | Claude Code / Cursor MCP server configuration (`ssh nma.sh mcp`) |
 
 ## Good Fit vs. Not a Fit
 
