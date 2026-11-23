@@ -76,13 +76,15 @@ When creating a brand-new account over SSH on first use, `SKILL.md` passes `--re
 
 ## Docs
 
+- Full documentation: https://docs.nma.sh/
+- Remote MCP setup, tools & IT admin guide: https://docs.nma.sh/mcp
 - Agent index: https://nma.sh/llms.txt
 - Deploy & CLI commands: https://nma.sh/deploy.txt
 - Runtime APIs: https://nma.sh/runtime.txt
 - Recipes: https://nma.sh/recipes.txt
 - Limits: https://nma.sh/limits.txt
 - Errors & fixes: https://nma.sh/errors.txt
-- [Privacy & Trust](https://nma.sh/details#trust)
+- [Privacy Policy](https://nma.sh/privacy) · [Trust & Rules](https://nma.sh/details#trust)
 
 ## License
 
