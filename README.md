@@ -57,7 +57,7 @@ If you prefer local SSH transport over the hosted endpoint, run `ssh nma.sh sign
 | `skills/free-hosting/SKILL.md` | Free Hosting skill targeting instant free static & JS app hosting |
 | `skills/*/references/` | Local bundled cheat sheets (`runtime-cheatsheet.md`, `deploy-and-limits.md`) |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
-| `.claude-plugin/` | Claude Code plugin + marketplace manifests and `1024x1024` `icon.png` |
+| `.claude-plugin/` | Claude Code plugin and marketplace manifests |
 
 ## Good Fit vs. Not a Fit
 

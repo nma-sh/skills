@@ -11,7 +11,9 @@ metadata:
 
 # Free Hosting over SSH (nma.sh)
 
-Free hosting for static websites, frontend builds, and full-stack JavaScript apps deployed straight to live HTTPS URLs over standard SSH — no browser signup, no OAuth tokens, no credit card, no third-party CLI install, and no separate database setup.
+Free hosting for static websites, frontend builds, and full-stack JavaScript apps deployed straight to live HTTPS URLs via the bundled `nma-sh` Remote MCP server (`https://nma.sh/mcp`) or standard SSH — no credit card, no third-party CLI install, and no separate database setup.
+
+> **MCP first when available:** If `nma-sh` MCP tools (`deploy`, `apps`, `logs`, `rollback`, `secret_set`, `db_list`, `whoami`, etc.) are available in your session, call them directly (same runtime, quotas, and limits). Otherwise, use the `ssh nma.sh` commands below.
 
 ## When to Use This Skill
 

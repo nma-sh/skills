@@ -8,7 +8,9 @@
     "url": "https://nma.sh"
   },
   "homepage": "https://nma.sh",
+  "documentationUrl": "https://nma.sh/details",
   "privacyPolicyUrl": "https://nma.sh/details#trust",
+  "termsOfServiceUrl": "https://nma.sh/details#trust",
   "repository": "https://github.com/nma-sh/skills",
   "license": "MIT",
   "keywords": [
