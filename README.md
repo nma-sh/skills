@@ -26,8 +26,8 @@ claude --plugin-dir ./nma-skills
 Connect directly to the hosted Streamable HTTP MCP endpoint with OAuth 2.1 + PKCE:
 
 - **URL:** `https://nma.sh/mcp`
-- **New users:** click **Create an account** on the OAuth consent page (free, no credit card).
-- **Existing SSH accounts:** run `ssh nma.sh mcp-connect` and paste the one-time 5-minute code into **Use my account**.
+- **Email sign-in / sign-up:** enter your email on the OAuth page for a one-time sign-in link and 6-digit code (new accounts start verified with 5 permanent apps, or you can permanently link an existing SSH-key account).
+- **Direct SSH connect:** run `ssh nma.sh mcp-connect` and paste the one-time 5-minute code into **Use my account**.
 - **Revoke anytime:** run `ssh nma.sh mcp revoke` (owner key) to disconnect every remote MCP client immediately.
 
 CLI shortcut for Claude Code:
