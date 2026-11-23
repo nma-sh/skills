@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "nma-sh",
+  "displayName": "nma.sh",
   "version": "1.4.0",
   "description": "Free hosting via nma.sh — bundled remote MCP server (https://nma.sh/mcp, OAuth 2.1) and SSH skills to deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets.",
   "author": {
