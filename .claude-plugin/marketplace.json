@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "nma-sh",
-  "version": "1.3.0",
-  "description": "Free hosting for static sites and JavaScript web apps over SSH with nma.sh.",
+  "version": "1.4.0",
+  "description": "Free hosting for static sites and JavaScript web apps via nma.sh — remote MCP server (https://nma.sh/mcp) and SSH deploy skills.",
   "owner": {
     "name": "nma.sh",
     "url": "https://nma.sh"
@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "nma-sh",
-      "description": "Free hosting over SSH via nma.sh — deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets.",
+      "description": "Free hosting via nma.sh — bundled remote MCP server (https://nma.sh/mcp, OAuth 2.1) and SSH skills to deploy static sites, framework builds, and full-stack JavaScript apps with built-in db, kv, auth, and secrets.",
       "author": {
         "name": "nma.sh",
         "url": "https://nma.sh"

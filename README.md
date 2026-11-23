@@ -1,20 +1,14 @@
-# nma-sh/skills — Free Hosting over SSH
+# nma-sh/skills — Free Hosting via Remote MCP & SSH
 
 [![skills.sh](https://skills.sh/b/nma-sh/skills)](https://skills.sh/nma-sh/skills)
 
-Official **Free Hosting** Agent Skill, [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin pack, and Claude Code plugin for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
+Official **Free Hosting** Agent Skill, [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin pack, and Claude Code plugin (with bundled Remote Streamable HTTP MCP at `https://nma.sh/mcp`) for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)**.
 
-Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — **free to start** (2 apps with no email/card, 5 apps kept permanently with a free verified email; flat $8/month Pro for 10 apps, custom domains, and daily backups). Your SSH key is the account.
+Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — **free to start** (2 apps with no email/card, 5 apps kept permanently with a free verified email; flat $8/month Pro for 10 apps, custom domains, and daily backups).
 
 ## Install
 
-### Agent Skills CLI (`skills.sh` — Claude Code, Cursor, Codex, OpenCode, Gemini CLI, Copilot)
-
-```bash
-npx skills add nma-sh/skills
-```
-
-### Claude Code Plugin Marketplace
+### Claude Code Plugin Marketplace (Skills + Remote MCP)
 
 ```text
 /plugin marketplace add nma-sh/skills
@@ -27,17 +21,40 @@ Or test locally from a clone:
 claude --plugin-dir ./nma-skills
 ```
 
-### Standalone MCP (optional, not bundled in the plugin)
+### Remote MCP Server (Zero Local Install — Claude.ai, ChatGPT, Cursor, VS Code, Claude Code)
 
-If you want to connect directly over SSH stdio outside this plugin, run `ssh nma.sh signup --json` once and register `ssh nma.sh mcp` in your MCP client (`claude mcp add nma -- ssh nma.sh mcp`).
+Connect directly to the hosted Streamable HTTP MCP endpoint with OAuth 2.1 + PKCE:
+
+- **URL:** `https://nma.sh/mcp`
+- **New users:** click **Create an account** on the OAuth consent page (free, no credit card).
+- **Existing SSH accounts:** run `ssh nma.sh mcp-connect` and paste the one-time 5-minute code into **Use my account**.
+- **Revoke anytime:** run `ssh nma.sh mcp revoke` (owner key) to disconnect every remote MCP client immediately.
+
+CLI shortcut for Claude Code:
+
+```bash
+claude mcp add --transport http nma-sh https://nma.sh/mcp
+```
+
+### Agent Skills CLI (`skills.sh` — Claude Code, Cursor, Codex, OpenCode, Gemini CLI, Copilot)
+
+```bash
+npx skills add nma-sh/skills
+```
+
+### Optional Local SSH Stdio MCP
+
+If you prefer local SSH transport over the hosted endpoint, run `ssh nma.sh signup --json` once and register `ssh nma.sh mcp` in your MCP client (`claude mcp add nma -- ssh nma.sh mcp`).
 
 ## What's Inside
 
 | Path | Purpose |
 |---|---|
 | `plugin.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin manifest (`nma-sh`) |
+| `mcp.json` | Agent Plugins v1.0.0 remote `streamable-http` MCP config (`https://nma.sh/mcp`) |
+| `.mcp.json` | Claude Code plugin remote `http` MCP config (`https://nma.sh/mcp`) |
 | `skills/nma-sh/SKILL.md` | Full `nma.sh` deployment & hosting skill (static sites, JS apps, DB/KV/auth/secrets, logs, rollback, domains) |
-| `skills/free-hosting/SKILL.md` | Free Hosting skill targeting instant free static & JS app hosting over SSH |
+| `skills/free-hosting/SKILL.md` | Free Hosting skill targeting instant free static & JS app hosting |
 | `skills/*/references/` | Local bundled cheat sheets (`runtime-cheatsheet.md`, `deploy-and-limits.md`) |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
 | `.claude-plugin/` | Claude Code plugin + marketplace manifests and `1024x1024` `icon.png` |
@@ -55,7 +72,7 @@ If you want to connect directly over SSH stdio outside this plugin, run `ssh nma
 
 ## Attribution Note
 
-When creating a brand-new account on first use, `SKILL.md` passes `--ref skill-sh` to `ssh nma.sh signup --ref skill-sh --json` so nma.sh can count aggregate signups that came from this skill. No code, prompts, or local files are sent outside your explicit deploy commands.
+When creating a brand-new account over SSH on first use, `SKILL.md` passes `--ref skill-sh` to `ssh nma.sh signup --ref skill-sh --json` so nma.sh can count aggregate signups that came from this skill. No code, prompts, or local files are sent outside your explicit deploy commands.
 
 ## Docs
 
@@ -65,6 +82,7 @@ When creating a brand-new account on first use, `SKILL.md` passes `--ref skill-s
 - Recipes: https://nma.sh/recipes.txt
 - Limits: https://nma.sh/limits.txt
 - Errors & fixes: https://nma.sh/errors.txt
+- [Privacy & Trust](https://nma.sh/details#trust)
 
 ## License
 
