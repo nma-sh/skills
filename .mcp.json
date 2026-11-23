@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "nma": {
-      "command": "ssh",
-      "args": ["nma.sh", "mcp"]
-    }
-  }
-}

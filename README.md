@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/nma-sh/skills)](https://skills.sh/nma-sh/skills)
 
-Official **Free Hosting** Agent Skill, [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin pack, Claude Code plugin, and MCP configuration for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
+Official **Free Hosting** Agent Skill, [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin pack, and Claude Code plugin for deploying static sites and JavaScript web apps to **[nma.sh](https://nma.sh/)** over SSH.
 
 Each site runs in its own hardware-isolated Firecracker microVM with a live HTTPS URL in seconds, built-in database (`db`), edge `kv`, `crdt` counters, user authentication (`auth`), write-only `secrets`, and outbound `fetch()` — **free to start** (2 apps with no email/card, 5 apps kept permanently with a free verified email; flat $8/month Pro for 10 apps, custom domains, and daily backups). Your SSH key is the account.
 
@@ -27,41 +27,20 @@ Or test locally from a clone:
 claude --plugin-dir ./nma-skills
 ```
 
-### MCP Server (zero CLI install)
+### Standalone MCP (optional, not bundled in the plugin)
 
-Add this to any MCP-compatible client (Claude Desktop, Claude Code, Cursor, Windsurf, etc.):
-
-```json
-{
-  "mcpServers": {
-    "nma": {
-      "command": "ssh",
-      "args": ["nma.sh", "mcp"]
-    }
-  }
-}
-```
-
-Or in Claude Code:
-
-```bash
-claude mcp add nma -- ssh nma.sh mcp
-```
-
-Run `ssh nma.sh signup --json` once before connecting over MCP.
+If you want to connect directly over SSH stdio outside this plugin, run `ssh nma.sh signup --json` once and register `ssh nma.sh mcp` in your MCP client (`claude mcp add nma -- ssh nma.sh mcp`).
 
 ## What's Inside
 
 | Path | Purpose |
 |---|---|
 | `plugin.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable plugin manifest (`nma-sh`) |
-| `mcp.json` | [Agent Plugins v1.0.0](https://agent-plugins.org/) portable stdio MCP server config (`ssh nma.sh mcp`) |
 | `skills/nma-sh/SKILL.md` | Full `nma.sh` deployment & hosting skill (static sites, JS apps, DB/KV/auth/secrets, logs, rollback, domains) |
 | `skills/free-hosting/SKILL.md` | Free Hosting skill targeting instant free static & JS app hosting over SSH |
 | `skills/*/references/` | Local bundled cheat sheets (`runtime-cheatsheet.md`, `deploy-and-limits.md`) |
 | `skills.sh.json` | Repository page grouping for `skills.sh/nma-sh/skills` |
 | `.claude-plugin/` | Claude Code plugin + marketplace manifests and `1024x1024` `icon.png` |
-| `.mcp.json` | Claude Code / Cursor MCP server configuration (`ssh nma.sh mcp`) |
 
 ## Good Fit vs. Not a Fit
 
